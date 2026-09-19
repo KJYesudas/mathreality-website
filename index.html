@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MatheReality — Real Math. Real World.</title>
+  <meta name="description" content="Math is everywhere. You just have to look closer. A cinematic, interactive digital exhibition of mathematics in the real world.">
+
+  <!-- Google Fonts: Plus Jakarta Sans, JetBrains Mono, Instrument Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/interactive.css">
+  <link rel="stylesheet" href="css/journey.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Smooth Scroll & Animation Libraries (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-follower" aria-hidden="true"></div>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="#hero" class="brand-logo">
+        <span class="math-symbol">∑</span>
+        <span>MatheReality</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#what-is" class="nav-link">Explore</a></li>
+        <li><a href="#learn" class="nav-link">Learn</a></li>
+        <li><a href="#discover" class="nav-link">Discover</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-controls-group">
+          <!-- Theme Toggle (Sun / Moon) -->
+          <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle theme">
+            <svg id="theme-icon" class="theme-icon" viewBox="0 0 24 24"></svg>
+          </button>
+
+          <!-- Sound Toggle (Sound ON / OFF) -->
+          <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle audio effects">
+            <span class="sound-dot muted" id="sound-dot"></span>
+            <span id="sound-label">SOUND OFF</span>
+          </button>
+        </div>
+
+        <button class="nav-menu-btn" aria-label="Open Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="7" x2="21" y2="7"></line>
+            <line x1="3" y1="17" x2="21" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================================================
+         01 — HERO (VIDEO + ONE MINIMAL WELCOME HEADLINE)
+         - Hero screen features the fullscreen video
+         - ONLY ONE minimal headline: "Welcome to MatheReality."
+         - NO buttons, CTA, subheadings, or UI cards
+         - 100vh height with 16:9 responsive video frame
+         - Cursor-based floating 3D tilt on video with spring inertia
+         - Stable welcome text with spring entrance and scroll fade
+         ================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-video-viewport">
+        <div class="hero-video-frame">
+          <video 
+            class="hero-video-element" 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            preload="auto"
+            poster="assets/placeholder-hero.svg">
+            <source src="assets/hero-video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Minimal Hero Welcome Headline (Single text element, no button, no subhead) -->
+      <div class="hero-welcome-container" aria-hidden="false">
+        <h1 class="hero-welcome-text">Welcome to MatheReality.</h1>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         02 — WHAT IS MATHEREALITY?
+         - Substantial whitespace
+         - Line-by-line editorial reveal
+         - 4 large editorial moments (NOT cards)
+         ================================================== -->
+    <section class="section-what-is" id="what-is">
+      <div class="container">
+        <div class="what-is-lead-wrapper">
+          <span class="what-is-label">WHAT IS MATHEREALITY?</span>
+          <h2 class="what-is-headline">
+            Math, but something<br>
+            you can actually see.
+          </h2>
+          <p class="what-is-statement">
+            MatheReality turns mathematical ideas into visual, interactive experiences that make concepts easier to understand, explore and remember.
+          </p>
+        </div>
+
+        <div class="what-is-editorial-moments">
+          <!-- Moment 1 -->
+          <div class="editorial-moment">
+            <div>
+              <h3 class="editorial-moment-title">VISUAL EXPLANATIONS</h3>
+              <p class="editorial-moment-desc">See the idea before memorising the formula.</p>
+            </div>
+            <div class="editorial-moment-visual">
+              <svg id="vis-explanation-svg" viewBox="0 0 200 160"></svg>
+            </div>
+          </div>
+
+          <!-- Moment 2 -->
+          <div class="editorial-moment">
+            <div>
+              <h3 class="editorial-moment-title">INTERACTIVE CONCEPTS</h3>
+              <p class="editorial-moment-desc">Change things. Move things. See what happens.</p>
+            </div>
+            <div class="editorial-moment-visual">
+              <svg id="vis-interactive-svg" viewBox="0 0 200 160"></svg>
+            </div>
+          </div>
+
+          <!-- Moment 3 -->
+          <div class="editorial-moment">
+            <div>
+              <h3 class="editorial-moment-title">REAL-WORLD CONNECTIONS</h3>
+              <p class="editorial-moment-desc">Discover where mathematics exists outside the classroom.</p>
+            </div>
+            <div class="editorial-moment-visual">
+              <svg id="vis-realworld-svg" viewBox="0 0 200 160"></svg>
+            </div>
+          </div>
+
+          <!-- Moment 4 -->
+          <div class="editorial-moment">
+            <div>
+              <h3 class="editorial-moment-title">EXPERIMENTS</h3>
+              <p class="editorial-moment-desc">Learn by exploring instead of simply reading.</p>
+            </div>
+            <div class="editorial-moment-visual">
+              <svg id="vis-experiments-svg" viewBox="0 0 200 160"></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         03 — WHAT YOU GET
+         - Long scroll section
+         - Large mathematical visual alongside each point
+         ================================================== -->
+    <section class="section-what-you-get" id="what-you-get">
+      <div class="container">
+        <div class="what-you-get-header">
+          <span class="section-label">THE EXPERIENCE</span>
+          <h2 class="what-you-get-headline">
+            Everything you need<br>
+            to see the idea.
+          </h2>
+        </div>
+
+        <div class="what-you-get-track">
+          <!-- Item 01 -->
+          <div class="what-you-get-item">
+            <div class="what-you-get-visual-box">
+              <svg id="wyg-vis-1" viewBox="0 0 300 240"></svg>
+            </div>
+            <div class="what-you-get-text">
+              <span class="what-you-get-num">01</span>
+              <h3 class="what-you-get-title">UNDERSTAND</h3>
+              <p class="what-you-get-desc">Concepts explained visually.</p>
+            </div>
+          </div>
+
+          <!-- Item 02 -->
+          <div class="what-you-get-item">
+            <div class="what-you-get-visual-box">
+              <svg id="wyg-vis-2" viewBox="0 0 300 240"></svg>
+            </div>
+            <div class="what-you-get-text">
+              <span class="what-you-get-num">02</span>
+              <h3 class="what-you-get-title">EXPLORE</h3>
+              <p class="what-you-get-desc">Interactive mathematical experiences.</p>
+            </div>
+          </div>
+
+          <!-- Item 03 -->
+          <div class="what-you-get-item">
+            <div class="what-you-get-visual-box">
+              <svg id="wyg-vis-3" viewBox="0 0 300 240"></svg>
+            </div>
+            <div class="what-you-get-text">
+              <span class="what-you-get-num">03</span>
+              <h3 class="what-you-get-title">CONNECT</h3>
+              <p class="what-you-get-desc">Real-world examples.</p>
+            </div>
+          </div>
+
+          <!-- Item 04 -->
+          <div class="what-you-get-item">
+            <div class="what-you-get-visual-box">
+              <svg id="wyg-vis-4" viewBox="0 0 300 240"></svg>
+            </div>
+            <div class="what-you-get-text">
+              <span class="what-you-get-num">04</span>
+              <h3 class="what-you-get-title">DISCOVER</h3>
+              <p class="what-you-get-desc">Interesting facts and unexpected patterns.</p>
+            </div>
+          </div>
+
+          <!-- Item 05 -->
+          <div class="what-you-get-item">
+            <div class="what-you-get-visual-box">
+              <svg id="wyg-vis-5" viewBox="0 0 300 240"></svg>
+            </div>
+            <div class="what-you-get-text">
+              <span class="what-you-get-num">05</span>
+              <h3 class="what-you-get-title">PRACTICE</h3>
+              <p class="what-you-get-desc">Learn through interaction rather than memorisation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         04 — DETAILS + PRICING
+         - Large editorial vertical scroll stages
+         - NOT a 3-card table
+         - Progressive product reveals
+         - Easily editable prices
+         ================================================== -->
+    <section class="section-pricing" id="pricing">
+      <div class="container">
+        <div class="pricing-header">
+          <span class="section-label">THE EXPERIENCE</span>
+          <h2 class="what-you-get-headline">
+            Choose how far<br>
+            you want to explore.
+          </h2>
+        </div>
+
+        <div class="pricing-stages-list">
+          <!-- Stage 1: FOUNDATION -->
+          <div class="pricing-stage-card">
+            <div>
+              <div class="pricing-tier-name">FOUNDATION</div>
+              <div class="pricing-price-display">
+                <span class="pricing-amount">₹1,999</span>
+              </div>
+              <p class="pricing-stage-tagline">Build the fundamentals.</p>
+              <ul class="pricing-features-list">
+                <li>Core concepts</li>
+                <li>Visual explanations</li>
+                <li>Interactive examples</li>
+                <li>Practice activities</li>
+              </ul>
+              <a href="#the-question" class="btn btn-secondary">
+                <span>Select Foundation</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+            <div class="pricing-visual-column">
+              <div class="pricing-stage-visual">
+                <svg id="price-vis-1" viewBox="0 0 200 160"></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 2: DISCOVERY -->
+          <div class="pricing-stage-card featured">
+            <div>
+              <div class="pricing-tier-name">DISCOVERY</div>
+              <div class="pricing-price-display">
+                <span class="pricing-amount">₹3,499</span>
+              </div>
+              <p class="pricing-stage-tagline">Go deeper.</p>
+              <ul class="pricing-features-list">
+                <li>Advanced concepts</li>
+                <li>Interactive experiments</li>
+                <li>Real-world applications</li>
+                <li>Guided exploration</li>
+              </ul>
+              <a href="#the-question" class="btn btn-primary">
+                <span>Select Discovery</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+            <div class="pricing-visual-column">
+              <div class="pricing-stage-visual">
+                <svg id="price-vis-2" viewBox="0 0 200 160"></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 3: COMPLETE -->
+          <div class="pricing-stage-card">
+            <div>
+              <div class="pricing-tier-name">COMPLETE</div>
+              <div class="pricing-price-display">
+                <span class="pricing-amount">₹4,999</span>
+              </div>
+              <p class="pricing-stage-tagline">The complete MatheReality experience.</p>
+              <ul class="pricing-features-list">
+                <li>Full concept library</li>
+                <li>Interactive experiences</li>
+                <li>Experiments</li>
+                <li>Discoveries</li>
+                <li>Progress tracking</li>
+              </ul>
+              <a href="#the-question" class="btn btn-secondary">
+                <span>Select Complete</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+            <div class="pricing-visual-column">
+              <div class="pricing-stage-visual">
+                <svg id="price-vis-3" viewBox="0 0 200 160"></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         05 — THE QUESTION
+         - Minimalist, empty space, long pause
+         - SEE extremely large with glow
+         ================================================== -->
+    <section class="section-the-question" id="the-question">
+      <div class="container">
+        <div class="question-content-box">
+          <div class="question-what-if">WHAT IF</div>
+          <h2 class="question-line-1">
+            math wasn't<br>
+            just something you learned?
+          </h2>
+          <h2 class="question-line-2">
+            What if it was<br>
+            something you could <span class="word-see">SEE</span>?
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         06 — MATH IN THE REAL WORLD (Horizontal Scroll)
+         ================================================== -->
+    <section class="section-reality" id="reality">
+      <div class="reality-pinned-wrapper">
+        <div class="reality-header">
+          <span class="section-label">01 / REALITY</span>
+          <h2 class="reality-headline">You've been using math without noticing.</h2>
+        </div>
+
+        <div class="reality-horizontal-track">
+          <!-- CARD 01: ARCHITECTURE -->
+          <div class="reality-card">
+            <div>
+              <div class="reality-card-top">
+                <span class="reality-card-num">CARD 01</span>
+                <span class="reality-card-category">STRUCTURE</span>
+              </div>
+              <h3 class="reality-card-title">ARCHITECTURE</h3>
+              <p class="reality-card-subtitle">Geometry becomes structure.</p>
+            </div>
+
+            <div class="reality-card-visual">
+              <svg viewBox="0 0 200 120" fill="none" stroke="#6C38CC" stroke-width="1.5">
+                <polygon points="100,15 170,105 30,105" fill="rgba(108, 56, 204, 0.06)" />
+                <line x1="100" y1="15" x2="100" y2="105" stroke-dasharray="3 3" />
+                <line x1="65" y1="60" x2="135" y2="60" />
+                <circle cx="100" cy="15" r="3" fill="#6C38CC" />
+                <circle cx="170" cy="105" r="3" fill="#121214" />
+                <circle cx="30" cy="105" r="3" fill="#121214" />
+              </svg>
+            </div>
+
+            <div class="reality-card-tags">
+              <span class="reality-card-tag">Triangles</span>
+              <span class="reality-card-tag">Angles</span>
+              <span class="reality-card-tag">Symmetry</span>
+              <span class="reality-card-tag">Proportion</span>
+            </div>
+          </div>
+
+          <!-- CARD 02: SPACE -->
+          <div class="reality-card">
+            <div>
+              <div class="reality-card-top">
+                <span class="reality-card-num">CARD 02</span>
+                <span class="reality-card-category">MOTION</span>
+              </div>
+              <h3 class="reality-card-title">SPACE</h3>
+              <p class="reality-card-subtitle">Numbers become movement.</p>
+            </div>
+
+            <div class="reality-card-visual">
+              <svg viewBox="0 0 200 120" fill="none" stroke="#6C38CC" stroke-width="1.5">
+                <circle cx="100" cy="60" r="28" fill="rgba(108, 56, 204, 0.08)" stroke="#121214" />
+                <ellipse cx="100" cy="60" rx="75" ry="24" transform="rotate(-15 100 60)" stroke-dasharray="4 4" />
+                <circle cx="160" cy="45" r="5" fill="#6C38CC" />
+                <line x1="100" y1="60" x2="160" y2="45" stroke="#121214" stroke-opacity="0.3" stroke-dasharray="2 2" />
+              </svg>
+            </div>
+
+            <div class="reality-card-tags">
+              <span class="reality-card-tag">Distance</span>
+              <span class="reality-card-tag">Time</span>
+              <span class="reality-card-tag">Speed</span>
+              <span class="reality-card-tag">Gravity</span>
+            </div>
+          </div>
+
+          <!-- CARD 03: DESIGN -->
+          <div class="reality-card">
+            <div>
+              <div class="reality-card-top">
+                <span class="reality-card-num">CARD 03</span>
+                <span class="reality-card-category">HARMONY</span>
+              </div>
+              <h3 class="reality-card-title">DESIGN</h3>
+              <p class="reality-card-subtitle">Math creates balance.</p>
+            </div>
+
+            <div class="reality-card-visual">
+              <svg viewBox="0 0 200 120" fill="none" stroke="#6C38CC" stroke-width="1.5">
+                <rect x="40" y="20" width="120" height="80" stroke="#121214" stroke-opacity="0.3" />
+                <line x1="114" y1="20" x2="114" y2="100" />
+                <line x1="40" y1="70" x2="114" y2="70" />
+                <path d="M 40 100 A 80 80 0 0 1 120 20" stroke="#6C38CC" stroke-width="2" />
+              </svg>
+            </div>
+
+            <div class="reality-card-tags">
+              <span class="reality-card-tag">Grid</span>
+              <span class="reality-card-tag">Scale</span>
+              <span class="reality-card-tag">Ratio</span>
+              <span class="reality-card-tag">Perspective</span>
+            </div>
+          </div>
+
+          <!-- CARD 04: EVERYDAY LIFE -->
+          <div class="reality-card">
+            <div>
+              <div class="reality-card-top">
+                <span class="reality-card-num">CARD 04</span>
+                <span class="reality-card-category">SUBTLETY</span>
+              </div>
+              <h3 class="reality-card-title">EVERYDAY LIFE</h3>
+              <p class="reality-card-subtitle">Math is hiding in plain sight.</p>
+            </div>
+
+            <div class="reality-card-visual">
+              <svg viewBox="0 0 200 120" fill="none" stroke="#6C38CC" stroke-width="1.5">
+                <circle cx="70" cy="60" r="30" stroke="#121214" stroke-opacity="0.5" />
+                <line x1="70" y1="60" x2="70" y2="40" stroke="#6C38CC" stroke-width="2" />
+                <line x1="70" y1="60" x2="86" y2="60" stroke="#6C38CC" stroke-width="2" />
+                <rect x="120" y="70" width="10" height="20" fill="#6C38CC" fill-opacity="0.2" />
+                <rect x="135" y="55" width="10" height="35" fill="#6C38CC" fill-opacity="0.4" />
+                <rect x="150" y="35" width="10" height="55" fill="#6C38CC" fill-opacity="0.7" />
+              </svg>
+            </div>
+
+            <div class="reality-card-tags">
+              <span class="reality-card-tag">Time</span>
+              <span class="reality-card-tag">Money</span>
+              <span class="reality-card-tag">Measurements</span>
+              <span class="reality-card-tag">Probability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         07 — TRANSFORMATION (Pinned Sequence)
+         ================================================== -->
+    <section class="section-transformation" id="transformation">
+      <div class="transformation-pinned">
+        <h2 class="transformation-stage-text">Circle</h2>
+
+        <div class="transformation-visual-box">
+          <svg class="transform-svg-stage" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="transformation-final-text">
+          <h2 class="transformation-final-headline">
+            Same math.<br>
+            <span>Different reality.</span>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         08 — EXPLORE (Interactive Experiments)
+         ================================================== -->
+    <section class="section-explore" id="explore">
+      <div class="container">
+        <div class="explore-header">
+          <span class="section-label">02 / EXPLORE</span>
+          <h2 class="explore-headline">
+            Don't just learn it.<br>
+            Play with it.
+          </h2>
+          <p class="explore-supporting">
+            Move it. Change it. Break it. Understand it.
+          </p>
+        </div>
+
+        <div class="explore-grid">
+          <!-- EXPERIMENT 1: ANGLES -->
+          <div class="experiment-card">
+            <div>
+              <div class="experiment-header">
+                <h3 class="experiment-title">ANGLES</h3>
+                <span class="experiment-tag">ANGLE</span>
+              </div>
+              <div class="angle-stage">
+                <svg id="angle-svg" class="angle-svg" viewBox="0 0 320 220"></svg>
+              </div>
+              <div class="angle-controls">
+                <div class="angle-slider-wrapper">
+                  <input type="range" id="angle-slider" class="angle-range-input" min="30" max="180" value="60">
+                  <span id="angle-degree-val" class="angle-degree-badge">60°</span>
+                </div>
+              </div>
+            </div>
+            <p class="experiment-desc">
+              Change the angle. Watch the shape respond.
+            </p>
+          </div>
+
+          <!-- EXPERIMENT 2: PROBABILITY -->
+          <div class="experiment-card">
+            <div>
+              <div class="experiment-header">
+                <h3 class="experiment-title">PROBABILITY</h3>
+                <span class="experiment-tag">CHANCE</span>
+              </div>
+              <div class="probability-stage">
+                <div id="prob-tokens-container" class="probability-tokens-row"></div>
+                <div class="prob-stats">
+                  <span id="prob-stat-trials">TRIALS: 0</span>
+                  <span id="prob-stat-rate">P(▲): 16.7%</span>
+                </div>
+              </div>
+              <button id="prob-btn" class="btn-try-again">TRY AGAIN</button>
+            </div>
+            <p class="experiment-desc">
+              Probability isn't guessing. It's understanding possibilities.
+            </p>
+          </div>
+
+          <!-- EXPERIMENT 3: FRACTIONS -->
+          <div class="experiment-card">
+            <div>
+              <div class="experiment-header">
+                <h3 class="experiment-title">FRACTIONS</h3>
+                <span class="experiment-tag" id="fraction-label">2/4</span>
+              </div>
+              <div class="fraction-stage">
+                <svg id="fraction-svg" class="fraction-svg" viewBox="0 0 170 170"></svg>
+              </div>
+              <div class="fraction-controls">
+                <div class="fraction-slider-wrapper">
+                  <input type="range" id="fraction-slider" class="angle-range-input" min="1" max="4" value="2">
+                </div>
+                <div class="fraction-buttons-row">
+                  <button class="fraction-btn" data-val="1">1/4</button>
+                  <button class="fraction-btn active" data-val="2">2/4</button>
+                  <button class="fraction-btn" data-val="3">3/4</button>
+                  <button class="fraction-btn" data-val="4">4/4</button>
+                </div>
+              </div>
+            </div>
+            <p class="experiment-desc">
+              Fractions become easier when you can actually see them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         09 — MATH, BUT DIFFERENT
+         ================================================== -->
+    <section class="section-math-different" id="math-different">
+      <div class="math-different-content">
+        <h2 class="math-different-lead">
+          Numbers are only the beginning.
+        </h2>
+
+        <div class="math-different-words">
+          <div class="different-word">PATTERNS.</div>
+          <div class="different-word">SHAPES.</div>
+          <div class="different-word">MOVEMENT.</div>
+          <div class="different-word">RELATIONSHIPS.</div>
+        </div>
+
+        <p class="math-different-final">
+          That's mathematics.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         10 — LEARN
+         ================================================== -->
+    <section class="section-learn" id="learn">
+      <div class="container">
+        <div class="learn-header">
+          <span class="section-label">03 / LEARN</span>
+          <h2 class="learn-headline">
+            Learn the idea.<br>
+            Not just the formula.
+          </h2>
+          <p class="learn-supporting">
+            Math becomes easier when you understand why it works.
+          </p>
+        </div>
+
+        <div class="learn-grid">
+          <!-- FOUNDATIONS -->
+          <div class="learn-card">
+            <div class="learn-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <h3 class="learn-card-title">FOUNDATIONS</h3>
+            <ul class="learn-card-topics">
+              <li>Numbers</li>
+              <li>Arithmetic</li>
+              <li>Fractions</li>
+              <li>Ratios</li>
+            </ul>
+            <p class="learn-card-desc">
+              Understand the core numerical logic that underpins all higher reasoning.
+            </p>
+          </div>
+
+          <!-- GEOMETRY -->
+          <div class="learn-card">
+            <div class="learn-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 22 22 22"></polygon>
+              </svg>
+            </div>
+            <h3 class="learn-card-title">GEOMETRY</h3>
+            <ul class="learn-card-topics">
+              <li>Shapes</li>
+              <li>Angles</li>
+              <li>Area</li>
+              <li>Volume</li>
+            </ul>
+            <p class="learn-card-desc">
+              Discover how space is measured, constructed, and transformed in physical reality.
+            </p>
+          </div>
+
+          <!-- ALGEBRA -->
+          <div class="learn-card">
+            <div class="learn-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="9" x2="20" y2="9"></line>
+                <line x1="4" y1="15" x2="20" y2="15"></line>
+                <line x1="10" y1="3" x2="8" y2="21"></line>
+                <line x1="16" y1="3" x2="14" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="learn-card-title">ALGEBRA</h3>
+            <ul class="learn-card-topics">
+              <li>Variables</li>
+              <li>Equations</li>
+              <li>Patterns</li>
+              <li>Functions</li>
+            </ul>
+            <p class="learn-card-desc">
+              Translate dynamic relationships into universal patterns and solutions.
+            </p>
+          </div>
+
+          <!-- PROBABILITY -->
+          <div class="learn-card">
+            <div class="learn-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3 class="learn-card-title">PROBABILITY</h3>
+            <ul class="learn-card-topics">
+              <li>Chance</li>
+              <li>Data</li>
+              <li>Prediction</li>
+              <li>Statistics</li>
+            </ul>
+            <p class="learn-card-desc">
+              Master the science of uncertainty and make informed real-world decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         11 — ONE CONCEPT
+         ================================================== -->
+    <section class="section-one-concept" id="one-concept">
+      <div class="concept-pinned-box">
+        <div class="concept-headline-area">
+          <span class="math-tag">ONE SIMPLE QUESTION</span>
+          <h2 class="concept-headline">
+            Why does a circle look like this?
+          </h2>
+        </div>
+
+        <div class="concept-stage-canvas">
+          <svg class="concept-svg-circle" viewBox="0 0 520 520" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="concept-conclusion">
+          <p class="concept-conclusion-text">
+            Because every part tells a story.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         12 — DISCOVER (Dedicated Individual Fact Moments)
+         - NOT a standard grid
+         ================================================== -->
+    <section class="section-discover" id="discover">
+      <div class="container">
+        <div class="discover-header">
+          <span class="section-label">04 / DISCOVER</span>
+          <h2 class="what-you-get-headline">
+            Small facts.<br>
+            Big "wait… what?" moments.
+          </h2>
+        </div>
+
+        <div class="discover-facts-stream">
+          <!-- FACT 01 -->
+          <div class="fact-moment">
+            <span class="fact-moment-badge">FACT 01</span>
+            <h3 class="fact-moment-title">π never really ends.</h3>
+            <div class="fact-moment-highlight">3.1415926535...</div>
+            <p class="fact-moment-desc">
+              And it keeps going — without ever repeating or falling into an infinite loop.
+            </p>
+          </div>
+
+          <!-- FACT 02 -->
+          <div class="fact-moment">
+            <span class="fact-moment-badge">FACT 02</span>
+            <h3 class="fact-moment-title">Triangles are incredibly useful structural shapes.</h3>
+            <p class="fact-moment-desc">
+              That's why triangles appear frequently in structures, bridges, cranes, and roof trusses to distribute loads evenly.
+            </p>
+          </div>
+
+          <!-- FACT 03 -->
+          <div class="fact-moment">
+            <span class="fact-moment-badge">FACT 03</span>
+            <h3 class="fact-moment-title">Your phone uses mathematics constantly.</h3>
+            <p class="fact-moment-desc">
+              From image compression and facial recognition to GPS triangulation and quantum encryption.
+            </p>
+          </div>
+
+          <!-- FACT 04 -->
+          <div class="fact-moment">
+            <span class="fact-moment-badge">FACT 04</span>
+            <h3 class="fact-moment-title">Music contains mathematical relationships.</h3>
+            <p class="fact-moment-desc">
+              Rhythm, frequency harmonics, acoustic wave intervals, and octave ratios are pure arithmetic in motion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         13 — MATH AROUND YOU
+         ================================================== -->
+    <section class="section-math-around" id="math-around">
+      <div class="math-around-pinned">
+        <div class="math-around-header">
+          <h2 class="math-around-headline">Look around.</h2>
+        </div>
+
+        <div class="math-around-canvas-box">
+          <svg class="math-around-svg" viewBox="0 0 880 520" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="math-around-text-sequence">
+          The world isn't random. <span>It's full of patterns.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         14 — INTERACTIVE GRID
+         ================================================== -->
+    <section class="section-big-grid" id="big-grid">
+      <canvas id="big-grid-canvas" class="big-grid-canvas"></canvas>
+
+      <div class="big-grid-content">
+        <div class="big-grid-hint">Move your cursor</div>
+        <h2 class="big-grid-headline-1">Every point has a position.</h2>
+        <h3 class="big-grid-headline-2">Every position tells a story.</h3>
+      </div>
+
+      <div id="big-grid-hud" class="big-grid-coords-hud">
+        POINT: (<span>0</span>, <span>0</span>) &nbsp;|&nbsp; r: <span>0px</span> &nbsp;|&nbsp; θ: <span>0°</span>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         15 & 16 — FOR STUDENTS & FOR CURIOUS MINDS
+         ================================================== -->
+    <section class="section-students-curious" id="audience">
+      <div class="container">
+        <div class="students-curious-grid">
+          <!-- 15: FOR STUDENTS -->
+          <div class="audience-card">
+            <div>
+              <span class="section-label">FOR STUDENTS</span>
+              <h3 class="audience-headline">
+                School gives you the formula.<br>
+                <span class="highlight-word">We want to show you why.</span>
+              </h3>
+              <p class="audience-desc">
+                Learn concepts through visuals, experiments and real-world connections. Stop memorizing rules in isolation and start developing spatial mathematical intuition.
+              </p>
+            </div>
+            <div>
+              <a href="#explore" class="btn btn-primary">
+                <span>Start exploring</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 16: FOR CURIOUS MINDS -->
+          <div class="audience-card">
+            <div>
+              <span class="section-label">FOR CURIOUS MINDS</span>
+              <h3 class="audience-headline">
+                You don't have to be "good at math" to be <span class="highlight-word">curious</span> about it.
+              </h3>
+              <p class="audience-desc">
+                Whether you're learning the basics or asking bigger questions, there's always another pattern to discover in astronomy, architecture, nature, and code.
+              </p>
+            </div>
+            <div>
+              <a href="#the-question" class="btn btn-secondary">
+                <span>Explore MatheReality</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         17 — THE JOURNEY (Horizontal Timeline with Traveling Point)
+         ================================================== -->
+    <section class="section-journey" id="journey">
+      <div class="journey-pinned-wrapper">
+        <div class="journey-header">
+          <span class="journey-badge">YOU ARE HERE</span>
+          <h2 class="reality-headline">The Mathematical Awakening.</h2>
+        </div>
+
+        <div class="journey-track-outer">
+          <!-- Traveling mathematical point -->
+          <div class="journey-traveling-point" id="journey-point"></div>
+
+          <div class="journey-track">
+            <!-- 1. CURIOUS -->
+            <div class="journey-step-card">
+              <div class="journey-step-number">STEP 01</div>
+              <h3 class="journey-step-name">CURIOUS</h3>
+              <p class="journey-step-desc">Noticing unexpected symmetries and spirals in the everyday environment.</p>
+            </div>
+            <div class="journey-connector-arrow">→</div>
+
+            <!-- 2. EXPLORE -->
+            <div class="journey-step-card">
+              <div class="journey-step-number">STEP 02</div>
+              <h3 class="journey-step-name">EXPLORE</h3>
+              <p class="journey-step-desc">Manipulating angles, adjusting ratios, testing probabilities without fear of mistakes.</p>
+            </div>
+            <div class="journey-connector-arrow">→</div>
+
+            <!-- 3. QUESTION -->
+            <div class="journey-step-card">
+              <div class="journey-step-number">STEP 03</div>
+              <h3 class="journey-step-name">QUESTION</h3>
+              <p class="journey-step-desc">Asking why circles possess π, why triangles bear loads, and why parabolas focus light.</p>
+            </div>
+            <div class="journey-connector-arrow">→</div>
+
+            <!-- 4. UNDERSTAND -->
+            <div class="journey-step-card">
+              <div class="journey-step-number">STEP 04</div>
+              <h3 class="journey-step-name">UNDERSTAND</h3>
+              <p class="journey-step-desc">Connecting visual geometric structures directly with algebraic equations.</p>
+            </div>
+            <div class="journey-connector-arrow">→</div>
+
+            <!-- 5. CONNECT -->
+            <div class="journey-step-card">
+              <div class="journey-step-number">STEP 05</div>
+              <h3 class="journey-step-name">CONNECT</h3>
+              <p class="journey-step-desc">Seeing how astronomy, digital screens, financial markets, and music share the same math.</p>
+            </div>
+            <div class="journey-connector-arrow">→</div>
+
+            <!-- 6. SEE -->
+            <div class="journey-step-card">
+              <div class="journey-step-number">STEP 06</div>
+              <h3 class="journey-step-name">SEE</h3>
+              <p class="journey-step-desc">Looking at the universe with a clear, inquisitive, mathematical lens.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="journey-conclusion-text">
+          "Once you see the math, you start seeing the world differently."
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         18 — ABOUT MATHEREALITY
+         ================================================== -->
+    <section class="section-about" id="about">
+      <div class="container">
+        <div class="about-content-box">
+          <span class="math-tag">ABOUT</span>
+          <h2 class="about-headline">
+            Making mathematics easier to see.
+          </h2>
+          <p class="about-paragraph">
+            MatheReality is an educational platform built around a simple idea: <strong>Understanding becomes easier when you can see the idea behind the numbers.</strong>
+          </p>
+          <p class="about-paragraph">
+            We connect mathematical concepts with visuals, interaction and the world around us — making learning more intuitive, interesting and memorable. Rather than confining math to exams and abstract drills, we bring it to life as an indispensable creative language.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         19 — FINAL EXPERIENCE (Point -> World Pinned)
+         ================================================== -->
+    <section class="section-final-experience" id="final-experience">
+      <div class="final-pinned-wrapper">
+        <div class="final-stage-canvas">
+          <svg class="final-svg-element" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="final-sequence-text">POINT</div>
+
+        <div class="final-text-reveals">
+          <div id="final-reveal-1" class="final-reveal-line">It started with one point.</div>
+          <div id="final-reveal-2" class="final-reveal-line">Look closer.</div>
+          <div id="final-reveal-3" class="final-reveal-line" style="color: var(--accent-purple);">There's math everywhere.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         20 — FINAL CTA
+         ================================================== -->
+    <section class="section-final-cta" id="final-cta">
+      <div class="container">
+        <div class="cta-content-wrapper">
+          <h2 class="cta-headline">
+            Ready to see<br>
+            math differently?
+          </h2>
+          <p class="cta-supporting">
+            Explore concepts. Discover patterns. Connect the dots.
+          </p>
+          <div class="cta-buttons-group">
+            <a href="#hero" class="btn btn-primary">
+              <span>ENTER MATHE REALITY</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="#explore" class="btn btn-secondary">
+              <span>Explore concepts</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================
+       21 — FOOTER
+       ================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">MatheReality</div>
+          <div class="footer-tagline">Real Math. Real World.</div>
+          <p class="footer-quote">
+            Math is everywhere.<br>
+            You just have to look closer.
+          </p>
+        </div>
+
+        <div class="footer-nav-group">
+          <div>
+            <div class="footer-col-title">PLATFORM</div>
+            <ul class="footer-links">
+              <li><a href="#what-is">Explore</a></li>
+              <li><a href="#learn">Learn</a></li>
+              <li><a href="#discover">Discover</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">EXPERIMENTS</div>
+            <ul class="footer-links">
+              <li><a href="#explore">Interactive Angles</a></li>
+              <li><a href="#explore">Probability Lab</a></li>
+              <li><a href="#explore">Fractions Visualizer</a></li>
+              <li><a href="#big-grid">Coordinate Grid</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">PERSPECTIVES</div>
+            <ul class="footer-links">
+              <li><a href="#reality">Architecture</a></li>
+              <li><a href="#reality">Space Dynamics</a></li>
+              <li><a href="#reality">Design Grids</a></li>
+              <li><a href="#one-concept">Why A Circle?</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© MatheReality. All rights reserved.</div>
+        <div>Built for curious minds worldwide.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Standalone Application Script (Zero CORS, works via file:/// and HTTP) -->
+  <script src="js/bundle.js"></script>
+</body>
+</html>

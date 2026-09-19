@@ -1,0 +1,366 @@
+/* ==================================================
+   04 — EXPLORE (Interactive Mathematical Experiments)
+   ================================================== */
+.section-explore {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.explore-header {
+  margin-bottom: 4.5rem;
+}
+
+.explore-headline {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.explore-supporting {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.experiment-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 520px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experiment-card:hover {
+  border-color: var(--border-teal);
+  box-shadow: var(--shadow-md);
+}
+
+.experiment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.experiment-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.experiment-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-teal);
+  background: var(--accent-teal-subtle);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Experiment 1: Interactive Angles */
+.angle-stage {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.angle-svg {
+  width: 90%;
+  height: 90%;
+}
+
+.angle-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.angle-slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.angle-range-input {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: var(--border-strong);
+  border-radius: 3px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.angle-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--accent-teal-glow);
+  border: 2px solid #FFFFFF;
+  transition: transform 0.2s ease;
+}
+
+.angle-range-input::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.angle-degree-badge {
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  min-width: 54px;
+  text-align: right;
+}
+
+/* Experiment 2: Interactive Probability */
+.probability-stage {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.probability-tokens-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prob-token {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: transform 0.4s var(--transition-bounce), background-color 0.3s ease;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+}
+
+.prob-token.highlighted {
+  background: var(--accent-yellow);
+  color: #121214;
+  border-color: var(--border-yellow);
+  transform: scale(1.15) translateY(-4px);
+  box-shadow: 0 8px 16px var(--accent-yellow-glow);
+}
+
+.prob-stats {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn-try-again {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: var(--accent-teal);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  margin-bottom: 1.25rem;
+}
+
+.btn-try-again:hover {
+  background: #0D9488;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--accent-teal-glow);
+}
+
+/* Experiment 3: Interactive Fractions */
+.fraction-stage {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.fraction-svg {
+  width: 170px;
+  height: 170px;
+  overflow: visible;
+}
+
+.fraction-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.fraction-slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fraction-buttons-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.fraction-btn {
+  flex: 1;
+  padding: 0.4rem 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fraction-btn.active, .fraction-btn:hover {
+  background: var(--accent-blue);
+  color: #FFFFFF;
+  border-color: var(--accent-blue);
+}
+
+.experiment-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   10 — BIG INTERACTIVE GRID
+   ================================================== */
+.section-big-grid {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F8F6F2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.big-grid-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.big-grid-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  pointer-events: none;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.big-grid-hint {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-blue);
+}
+
+.big-grid-headline-1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.big-grid-headline-2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--text-secondary);
+  opacity: 0.85;
+}
+
+.big-grid-coords-hud {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  z-index: 6;
+  box-shadow: var(--shadow-sm);
+  pointer-events: none;
+}
+
+.big-grid-coords-hud span {
+  color: var(--accent-yellow);
+  font-weight: 700;
+}

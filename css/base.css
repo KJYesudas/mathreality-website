@@ -1,0 +1,293 @@
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+  overflow-x: hidden;
+  transition: var(--theme-transition);
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--theme-transition);
+}
+
+/* Background Subtle Mathematical Grid Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--accent-blue);
+  color: #FFFFFF;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  transition: color 0.4s ease;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.7;
+  transition: color 0.4s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  position: relative;
+  z-index: 2;
+}
+
+/* Mathematical Labels & Chips */
+.math-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-blue);
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent-blue-subtle);
+  border: 1px solid var(--border-blue);
+  margin-bottom: 1.5rem;
+  transition: var(--theme-transition);
+}
+
+.math-tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-blue);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 1.25rem;
+  transition: color 0.4s ease;
+}
+
+/* Editorial Buttons with Tactile & Magnetic Physics */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s var(--transition-smooth), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(18, 18, 20, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-blue);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px var(--accent-blue-glow);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-surface-subtle);
+  border-color: var(--accent-teal);
+  color: var(--text-primary);
+}
+
+.btn-arrow {
+  transition: transform 0.3s var(--transition-smooth);
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Nav Controls: Theme Toggle & Sound Toggle */
+.nav-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle-btn, .sound-toggle-btn {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: transform 0.25s var(--transition-smooth), background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  outline: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.sound-toggle-btn {
+  width: auto;
+  padding: 0 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  gap: 0.4rem;
+}
+
+.theme-toggle-btn:hover, .sound-toggle-btn:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-teal);
+  color: var(--accent-teal);
+  transform: scale(1.03);
+}
+
+.theme-toggle-btn:active, .sound-toggle-btn:active {
+  transform: scale(0.97);
+}
+
+.theme-icon {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.5s var(--transition-bounce), opacity 0.3s ease;
+}
+
+.sound-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-teal); /* Soft teal when active */
+  transition: background-color 0.3s ease;
+}
+
+.sound-dot.muted {
+  background-color: var(--text-muted);
+}
+
+/* Custom Interactive Cursor Dot */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--transition-smooth), height 0.3s var(--transition-smooth), background-color 0.3s;
+}
+
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-teal);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s linear, width 0.3s var(--transition-smooth), height 0.3s var(--transition-smooth), border-color 0.3s;
+}
+
+body:hover .custom-cursor.active {
+  width: 14px;
+  height: 14px;
+  background-color: var(--accent-teal);
+}
+
+body:hover .custom-cursor-follower.active {
+  width: 54px;
+  height: 54px;
+  border-color: var(--accent-blue);
+}

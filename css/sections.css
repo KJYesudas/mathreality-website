@@ -1,0 +1,998 @@
+/* ==================================================
+   02 — WHAT IS MATHEREALITY?
+   - Substantial whitespace
+   - Line-by-line editorial reveal
+   - 4 large editorial moments (NOT cards)
+   ================================================== */
+.section-what-is {
+  position: relative;
+  min-height: 140vh;
+  padding: clamp(8rem, 16vh, 14rem) var(--container-padding);
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.what-is-lead-wrapper {
+  max-width: 960px;
+  margin: 0 auto clamp(6rem, 12vh, 10rem) auto;
+}
+
+.what-is-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.what-is-headline {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+}
+
+.what-is-statement {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-bottom: 4rem;
+}
+
+.what-is-editorial-moments {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5rem, 10vh, 8rem);
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.editorial-moment {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.editorial-moment:last-child {
+  border-bottom: none;
+}
+
+.editorial-moment-title {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.editorial-moment-desc {
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.editorial-moment-visual {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+}
+
+.editorial-moment-visual svg {
+  width: 80%;
+  height: 80%;
+}
+
+/* ==================================================
+   03 — WHAT YOU GET
+   - Long scroll section
+   - Large mathematical visual alongside each point
+   ================================================== */
+.section-what-you-get {
+  position: relative;
+  min-height: 200vh;
+  padding: clamp(8rem, 16vh, 12rem) var(--container-padding);
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.what-you-get-header {
+  max-width: 880px;
+  margin: 0 auto clamp(6rem, 10vh, 8rem) auto;
+  text-align: center;
+}
+
+.what-you-get-headline {
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.what-you-get-track {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6rem, 12vh, 10rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.what-you-get-item {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.what-you-get-item:nth-child(even) {
+  grid-template-columns: 1.2fr 1fr;
+  direction: rtl;
+}
+
+.what-you-get-item:nth-child(even) .what-you-get-text {
+  direction: ltr;
+}
+
+.what-you-get-visual-box {
+  width: 100%;
+  height: 320px;
+  background: var(--bg-surface);
+  border-radius: 24px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.what-you-get-visual-box svg {
+  width: 85%;
+  height: 85%;
+}
+
+.what-you-get-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.what-you-get-num {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-purple);
+  font-weight: 700;
+}
+
+.what-you-get-title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.what-you-get-desc {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   04 — DETAILS + PRICING
+   - Large editorial vertical scroll stages
+   - NOT a 3-card table
+   - Progressive product reveals
+   - Prices easy to edit
+   ================================================== */
+.section-pricing {
+  position: relative;
+  min-height: 220vh;
+  padding: clamp(8rem, 16vh, 12rem) var(--container-padding);
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pricing-header {
+  max-width: 840px;
+  margin: 0 auto clamp(5rem, 10vh, 8rem) auto;
+  text-align: center;
+}
+
+.pricing-stages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.pricing-stage-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: clamp(3rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.5s var(--transition-smooth), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pricing-stage-card.featured {
+  border-color: var(--border-blue);
+  box-shadow: var(--shadow-glass), var(--shadow-lg);
+}
+
+.pricing-tier-name {
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pricing-price-display {
+  font-size: clamp(3rem, 6vw, 4.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.pricing-stage-tagline {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.pricing-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.pricing-features-list li {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pricing-features-list li::before {
+  content: '✓';
+  color: var(--accent-teal);
+  font-weight: 800;
+}
+
+.pricing-visual-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-stage-visual {
+  width: 100%;
+  height: 260px;
+  background: var(--bg-surface);
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.pricing-stage-visual svg {
+  width: 75%;
+  height: 75%;
+}
+
+/* ==================================================
+   05 — THE QUESTION
+   - Minimalist, empty space, long pause
+   - SEE extremely large with glow
+   ================================================== */
+.section-the-question {
+  position: relative;
+  min-height: 140vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--border-subtle);
+  padding: 6rem var(--container-padding);
+}
+
+.question-content-box {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.question-what-if {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  letter-spacing: 0.3em;
+  color: var(--accent-blue);
+  margin-bottom: 2.5rem;
+}
+
+.question-line-1 {
+  font-size: clamp(2.75rem, 5.5vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+}
+
+.question-line-2 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.question-line-2 .word-see {
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  font-weight: 800;
+  color: var(--accent-blue);
+  text-shadow: 0 0 32px var(--accent-blue-glow);
+  display: inline-block;
+  position: relative;
+}
+
+/* ==================================================
+   06 — SEE MATH (Pinned Cinematic Transformation)
+   ================================================== */
+.section-see-math {
+  position: relative;
+  min-height: 250vh;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.see-math-pinned {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: var(--container-padding);
+}
+
+.see-math-stage-label {
+  font-family: var(--font-mono);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.see-math-canvas-box {
+  width: min(480px, 85vw);
+  height: min(480px, 85vw);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.see-math-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.see-math-final {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.see-math-final h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+}
+
+.see-math-final h2 span {
+  color: var(--accent-blue);
+}
+
+/* ==================================================
+   07 — MATH IN THE REAL WORLD (Horizontal Scroll)
+   ================================================== */
+.section-reality {
+  position: relative;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.reality-pinned-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.reality-header {
+  padding: 0 var(--container-padding);
+  max-width: var(--container-max-width);
+  margin: 0 auto 3rem auto;
+  width: 100%;
+}
+
+.reality-headline {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  max-width: 800px;
+}
+
+.reality-horizontal-track {
+  display: flex;
+  gap: 3rem;
+  padding-left: var(--container-padding);
+  padding-right: 20vw;
+  width: max-content;
+  will-change: transform;
+}
+
+.reality-card {
+  flex: 0 0 clamp(360px, 35vw, 480px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 540px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.reality-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-teal);
+}
+
+.reality-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.reality-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+.reality-card-category {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
+.reality-card-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.reality-card-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.reality-card-visual {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 2rem;
+}
+
+.reality-card-visual svg {
+  width: 80%;
+  height: 80%;
+}
+
+.reality-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.reality-card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--bg-surface-subtle);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ==================================================
+   08 — TRANSFORMATION (Second Pinned Sequence)
+   ================================================== */
+.section-transformation {
+  position: relative;
+  min-height: 250vh;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.transformation-pinned {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: var(--container-padding);
+}
+
+.transformation-stage-text {
+  font-family: var(--font-mono);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.transformation-visual-box {
+  width: min(500px, 85vw);
+  height: min(500px, 85vw);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transform-svg-stage {
+  width: 100%;
+  height: 100%;
+}
+
+.transformation-final-text {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+}
+
+.transformation-final-headline {
+  font-size: clamp(2.75rem, 5.5vw, 4.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.transformation-final-headline span {
+  color: var(--accent-blue);
+}
+
+/* ==================================================
+   10 — MATH, BUT DIFFERENT
+   ================================================== */
+.section-math-different {
+  position: relative;
+  min-height: 120vh;
+  background-color: #FAF9F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding-y) var(--container-padding);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.math-different-content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.math-different-lead {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.2;
+  margin-bottom: 5rem;
+  letter-spacing: -0.03em;
+}
+
+.math-different-words {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.different-word {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  opacity: 0.15;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, color 0.4s ease;
+}
+
+.different-word.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.different-word:hover {
+  color: var(--accent-teal);
+}
+
+.math-different-final {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  color: var(--accent-blue);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ==================================================
+   11 — LEARN
+   ================================================== */
+.section-learn {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.learn-header {
+  margin-bottom: 5rem;
+}
+
+.learn-headline {
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.learn-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 3rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s var(--transition-smooth), border-color 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.learn-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-teal);
+  box-shadow: var(--shadow-lg);
+  background-color: #FFFFFF;
+}
+
+.learn-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: var(--accent-blue-subtle);
+  border: 1px solid var(--border-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--accent-blue);
+  transition: transform 0.4s var(--transition-bounce);
+}
+
+.learn-card:hover .learn-card-icon {
+  transform: scale(1.1) rotate(6deg);
+}
+
+.learn-card-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.learn-card-topics {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.learn-card-topics li {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.learn-card-topics li::before {
+  content: '→';
+  color: var(--accent-purple);
+  font-weight: 700;
+}
+
+.learn-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ==================================================
+   12 — ONE CONCEPT (Circle Deconstruction & Rebuild)
+   ================================================== */
+.section-one-concept {
+  position: relative;
+  min-height: 250vh;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.concept-pinned-box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: var(--container-padding);
+}
+
+.concept-headline-area {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  z-index: 5;
+}
+
+.concept-headline {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.concept-stage-canvas {
+  position: relative;
+  width: min(520px, 85vw);
+  height: min(520px, 85vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concept-svg-circle {
+  width: 100%;
+  height: 100%;
+}
+
+.concept-conclusion {
+  position: absolute;
+  bottom: 3rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 6;
+}
+
+.concept-conclusion-text {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+/* ==================================================
+   13 — DISCOVER (Dedicated Individual Scroll Moments)
+   - NOT a standard grid
+   - Each fact has a dedicated moment
+   ================================================== */
+.section-discover {
+  position: relative;
+  padding: var(--section-padding-y) 0;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.discover-header {
+  max-width: 880px;
+  margin: 0 auto clamp(5rem, 10vh, 8rem) auto;
+  text-align: center;
+}
+
+.discover-facts-stream {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6rem, 12vh, 10rem);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.fact-moment {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: clamp(3rem, 6vw, 5rem);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: transform 0.4s var(--transition-smooth), border-color 0.4s ease;
+}
+
+.fact-moment:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-purple);
+}
+
+.fact-moment-badge {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-purple);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.fact-moment-title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.fact-moment-highlight {
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--accent-purple);
+  font-weight: 700;
+  background: var(--accent-purple-subtle);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  word-break: break-all;
+}
+
+.fact-moment-desc {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ==================================================
+   14 — MATH AROUND YOU
+   ================================================== */
+.section-math-around {
+  position: relative;
+  min-height: 200vh;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.math-around-pinned {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: var(--container-padding);
+}
+
+.math-around-header {
+  position: absolute;
+  top: 10vh;
+  text-align: center;
+  z-index: 10;
+}
+
+.math-around-headline {
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.math-around-canvas-box {
+  width: min(880px, 92vw);
+  height: min(520px, 60vh);
+  border-radius: 24px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.math-around-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.math-around-text-sequence {
+  position: absolute;
+  bottom: 8vh;
+  text-align: center;
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  z-index: 10;
+}
+
+.math-around-text-sequence span {
+  color: var(--accent-purple);
+}

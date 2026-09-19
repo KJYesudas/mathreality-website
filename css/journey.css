@@ -1,0 +1,401 @@
+/* ==================================================
+   16 & 17 — FOR STUDENTS & FOR CURIOUS MINDS
+   ================================================== */
+.section-students-curious {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.students-curious-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+}
+
+.audience-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: clamp(3rem, 5vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 520px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--transition-smooth), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.audience-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-blue);
+  box-shadow: var(--shadow-lg);
+}
+
+.audience-headline {
+  font-size: clamp(2.25rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.audience-headline .highlight-word {
+  color: var(--accent-blue);
+}
+
+.audience-desc {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* ==================================================
+   18 — THE JOURNEY (Horizontal Timeline with Traveling Point)
+   ================================================== */
+.section-journey {
+  position: relative;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.journey-pinned-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.journey-header {
+  padding: 0 var(--container-padding);
+  max-width: var(--container-max-width);
+  margin: 0 auto 3rem auto;
+  width: 100%;
+}
+
+.journey-badge {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.25em;
+  color: var(--accent-blue);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.journey-track-outer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.journey-traveling-point {
+  position: absolute;
+  top: 50%;
+  left: var(--container-padding);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--accent-yellow);
+  box-shadow: 0 0 20px var(--accent-yellow-glow);
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.journey-track {
+  display: flex;
+  gap: 3.5rem;
+  padding-left: var(--container-padding);
+  padding-right: 25vw;
+  width: max-content;
+  will-change: transform;
+  align-items: center;
+  position: relative;
+}
+
+.journey-step-card {
+  flex: 0 0 clamp(300px, 30vw, 420px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.journey-step-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-teal);
+}
+
+.journey-step-number {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent-teal);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.journey-step-name {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.journey-step-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.journey-connector-arrow {
+  font-size: 2.25rem;
+  color: var(--accent-blue);
+  opacity: 0.35;
+}
+
+.journey-conclusion-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 3rem auto 0 auto;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 0 var(--container-padding);
+}
+
+/* ==================================================
+   19 — ABOUT MATHEREALITY
+   ================================================== */
+.section-about {
+  padding: clamp(8rem, 16vh, 12rem) 0;
+  background-color: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-content-box {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-headline {
+  font-size: clamp(3rem, 5.5vw, 4.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+.about-paragraph {
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.about-paragraph strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* ==================================================
+   20 — FINAL EXPERIENCE (Point -> World Pinned)
+   ================================================== */
+.section-final-experience {
+  position: relative;
+  min-height: 300vh;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.final-pinned-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: var(--container-padding);
+}
+
+.final-stage-canvas {
+  width: min(500px, 85vw);
+  height: min(500px, 85vw);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.final-svg-element {
+  width: 100%;
+  height: 100%;
+}
+
+.final-sequence-text {
+  font-family: var(--font-mono);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin-top: 2rem;
+  height: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.final-text-reveals {
+  text-align: center;
+  max-width: 800px;
+  margin-top: 1.5rem;
+}
+
+.final-reveal-line {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ==================================================
+   21 — FINAL CTA
+   ================================================== */
+.section-final-cta {
+  padding: calc(var(--section-padding-y) * 1.4) 0;
+  background-color: var(--bg-surface-subtle);
+  position: relative;
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.cta-content-wrapper {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.cta-headline {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+.cta-supporting {
+  font-size: 1.45rem;
+  color: var(--text-secondary);
+  margin-bottom: 3.5rem;
+}
+
+.cta-buttons-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+/* ==================================================
+   22 — FOOTER
+   ================================================== */
+.site-footer {
+  background-color: #121214;
+  color: #FFFFFF;
+  padding: 6rem 0 3.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+  padding-bottom: 4.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  max-width: 380px;
+}
+
+.footer-logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.footer-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-purple-light);
+  margin-bottom: 1.5rem;
+}
+
+.footer-quote {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+.footer-nav-group {
+  display: flex;
+  gap: 4.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-mono);
+}
