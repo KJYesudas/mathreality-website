@@ -1,0 +1,110 @@
+:root {
+  /* Default Light Theme - Neutral warm canvas */
+  --bg-primary: #FAF9F6;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F3EFEA;
+  --bg-elevated: rgba(255, 255, 255, 0.92);
+  
+  --text-primary: #121214;
+  --text-secondary: #585860;
+  --text-muted: #8E8E98;
+  --text-inverse: #FAF9F6;
+
+  /* 3-Color Educational Palette */
+  /* 1. Deep Blue: Knowledge, mathematics, trust, primary interactive */
+  --accent-blue: #2563EB;
+  --accent-blue-subtle: rgba(37, 99, 235, 0.08);
+  --accent-blue-glow: rgba(37, 99, 235, 0.25);
+  --border-blue: rgba(37, 99, 235, 0.3);
+
+  /* 2. Soft Teal: Discovery, exploration, interaction, hover states, transformations */
+  --accent-teal: #14B8A6;
+  --accent-teal-subtle: rgba(20, 184, 166, 0.08);
+  --accent-teal-glow: rgba(20, 184, 166, 0.25);
+  --border-teal: rgba(20, 184, 166, 0.3);
+
+  /* 3. Warm Yellow: Curiosity, ideas, moments of discovery, highlighted values */
+  --accent-yellow: #F5C542;
+  --accent-yellow-subtle: rgba(245, 197, 66, 0.12);
+  --accent-yellow-glow: rgba(245, 197, 66, 0.3);
+  --border-yellow: rgba(245, 197, 66, 0.35);
+
+  /* Functional Aliases & Backwards Compatibility */
+  --accent-primary: var(--accent-blue);
+  --accent-secondary: var(--accent-teal);
+  --accent-highlight: var(--accent-yellow);
+  --accent-purple: var(--accent-blue);
+  --accent-purple-light: var(--accent-teal);
+  --accent-purple-dark: #1D4ED8;
+  --accent-purple-subtle: var(--accent-blue-subtle);
+  --accent-purple-glow: var(--accent-blue-glow);
+  --border-purple: var(--border-blue);
+
+  /* Mathematical Lines & Borders */
+  --border-subtle: rgba(18, 18, 20, 0.08);
+  --border-strong: rgba(18, 18, 20, 0.18);
+  --grid-line: rgba(18, 18, 20, 0.04);
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, Monaco, monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(18, 18, 20, 0.04);
+  --shadow-md: 0 8px 24px rgba(18, 18, 20, 0.06);
+  --shadow-lg: 0 16px 40px rgba(18, 18, 20, 0.08);
+  --shadow-glass: 0 8px 32px 0 rgba(37, 99, 235, 0.06);
+
+  /* Transitions */
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --theme-transition: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
+
+  /* Spacing & Layout */
+  --container-max-width: 1440px;
+  --container-padding: clamp(1.25rem, 5vw, 4rem);
+  --section-padding-y: clamp(5rem, 12vh, 10rem);
+}
+
+/* ==================================================
+   DARK MODE PALETTE
+   - Deep near-black / charcoal background
+   - Soft white typography
+   - Selective Blue, Teal, and Yellow accents
+   ================================================== */
+[data-theme="dark"] {
+  --bg-primary: #0C0C0E;
+  --bg-surface: #141418;
+  --bg-surface-subtle: #1C1C22;
+  --bg-elevated: rgba(20, 20, 24, 0.92);
+  
+  --text-primary: #F7F5F2;
+  --text-secondary: #A0A0AA;
+  --text-muted: #6E6E7C;
+  --text-inverse: #0C0C0E;
+
+  --accent-blue: #3B82F6;
+  --accent-blue-subtle: rgba(59, 130, 246, 0.15);
+  --accent-blue-glow: rgba(59, 130, 246, 0.35);
+  --border-blue: rgba(59, 130, 246, 0.35);
+
+  --accent-teal: #14B8A6;
+  --accent-teal-subtle: rgba(20, 184, 166, 0.15);
+  --accent-teal-glow: rgba(20, 184, 166, 0.35);
+  --border-teal: rgba(20, 184, 166, 0.35);
+
+  --accent-yellow: #F5C542;
+  --accent-yellow-subtle: rgba(245, 197, 66, 0.18);
+  --accent-yellow-glow: rgba(245, 197, 66, 0.4);
+  --border-yellow: rgba(245, 197, 66, 0.4);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --grid-line: rgba(255, 255, 255, 0.03);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --shadow-glass: 0 8px 32px 0 rgba(59, 130, 246, 0.12);
+}

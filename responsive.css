@@ -1,0 +1,147 @@
+/* Responsive Adaptations & Accessibility */
+
+@media (max-width: 1024px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .hero-text-col {
+    align-items: center;
+  }
+
+  .hero-supporting-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-wrapper {
+    justify-content: center;
+  }
+
+  .students-curious-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .nav-links {
+    display: none; /* In mobile/tablet, simplified nav */
+  }
+
+  .nav-menu-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1.25rem;
+    --section-padding-y: 4.5rem;
+  }
+
+  /* Navigation */
+  .site-header {
+    padding: 1rem var(--container-padding);
+  }
+
+  .nav-tagline {
+    display: none;
+  }
+
+  /* Section 02 - Reality Horizontal Cards on Mobile */
+  .section-reality {
+    height: auto;
+  }
+
+  .reality-pinned-wrapper {
+    height: auto;
+    padding: 4rem 0;
+  }
+
+  .reality-horizontal-track {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 var(--container-padding);
+    gap: 1.5rem;
+    transform: none !important;
+  }
+
+  .reality-card {
+    flex: 1 1 auto;
+    min-height: auto;
+    padding: 1.75rem;
+  }
+
+  /* Section 13 - Journey Track on Mobile */
+  .section-journey {
+    height: auto;
+  }
+
+  .journey-pinned-wrapper {
+    height: auto;
+    padding: 4rem 0;
+  }
+
+  .journey-track {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 var(--container-padding);
+    gap: 1.5rem;
+    transform: none !important;
+  }
+
+  .journey-step-card {
+    flex: 1 1 auto;
+    padding: 1.75rem;
+    width: 100%;
+  }
+
+  .journey-connector-arrow {
+    transform: rotate(90deg);
+  }
+
+  /* Interactive grid hud */
+  .big-grid-coords-hud {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.85rem;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .footer-nav-group {
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reality-horizontal-track,
+  .journey-track {
+    transform: none !important;
+  }
+
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}
