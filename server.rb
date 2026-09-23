@@ -19,6 +19,7 @@ MIME_TYPES = {
   '.wav'  => 'audio/wav',
   '.ogg'  => 'audio/ogg',
   '.json' => 'application/json',
+  '.xml'  => 'application/xml; charset=utf-8',
   '.ico'  => 'image/x-icon'
 }
 
